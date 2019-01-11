@@ -1,0 +1,44 @@
+{
+    "common": {
+        "name": "repetier",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "initial release"
+                   }
+        },
+        "title": "Repetier-Server",
+        "titleLang": {
+            "en": "Repetier",
+            "de": "Repetier"
+        },
+        "desc": {
+            "en": "Repetier",
+            "de": "Repetier"
+        },
+        "authors": [
+            "Coyote <coyote_f@web.de>"
+        ],
+        "docs": {
+            "en": "docs/en/admin.md",
+            "de": "docs/de/admin.md"
+        },
+        "platform": "Javascript/Node.js",
+        "mode": "schedule",
+        "schedule": "*/8 * * * * *",
+        "icon": "repetier.png",
+        "materialize": true,
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/coyote1/ioBroker.repetier/master/admin/repetier.png",
+        "keywords": [
+            "repetier"
+        ],
+        "license": "MIT",
+        "readme": "https://github.com/coyote1/ioBroker.repetier/blob/master/README.md",
+        "loglevel": "info",
+        "type": ""
+    },
+    "native": {},
+    "objects": []
+}

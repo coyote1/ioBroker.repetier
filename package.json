@@ -1,0 +1,68 @@
+{
+    "_from": "iobroker.repetier@0.0.1",
+    "_id": "iobroker.repetier@0.0.1",
+    "_inBundle": false,
+    "_integrity": "sha1-m0c7zZ+I2Rey78ZeNnaLEva34qw=",
+    "_location": "/iobroker.repetier",
+    "_phantomChildren": {},
+    "_requested": {
+        "type": "version",
+        "registry": true,
+        "raw": "iobroker.repetier@0.0.1",
+        "name": "iobroker.repetier",
+        "escapedName": "iobroker.repetier",
+        "rawSpec": "0.0.1",
+        "saveSpec": null,
+        "fetchSpec": "0.0.1"
+    },
+    "_requiredBy": [
+        "#USER",
+        "/"
+    ],
+    "_resolved": "",
+    "_shasum": "9b473bcd9f88d917b2efc65e36768b12f6b7e2ac",
+    "_spec": "iobroker.repetiern@0.0.1",
+    "_where": "/opt",
+    "author": {
+        "name": "Coyote",
+        "email": "coyote_f@web.de"
+    },
+    "bugs": {
+        "url": "https://github.com/coyote1/ioBroker.repetier/issues"
+    },
+    "bundleDependencies": false,
+    "contributors": [
+        {
+            "name": "Coyote",
+            "email": "coyote_f@web.de"
+        }
+    ],
+    "dependencies": {
+        "request": "^2.72.0"
+    },
+    "deprecated": false,
+    "description": "ioBroker repetier Adapter",
+    "devDependencies": {
+        "chai": "^4.1.2",
+        "gulp": "^3.9.1",
+        "mocha": "^4.1.0"
+    },
+    "homepage": "https://github.com/coyote1/ioBroker.repetier",
+    "keywords": [
+        "ioBroker",
+        "repetier",
+        "Smart Home",
+        "3d Druck"
+    ],
+    "license": "MIT",
+    "main": "main.js",
+    "name": "iobroker.repetier",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/coyote1/ioBroker.repetier.git"
+    },
+    "scripts": {
+        "test": "node node_modules/mocha/bin/mocha --exit"
+    },
+    "version": "0.0.1"
+}
