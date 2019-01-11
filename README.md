@@ -22,20 +22,17 @@ Folgende Daten werden abgefragt:
 
 IP Adresse vom Repetier Server eingeben, den Port (default 3344) und den API-Key (findet man im Repetier-Server WebUI. Einstellungen -> Globale Einstellungen -> Konnektivität) Danach noch die vorhandenen Druckernamen eintragen (Dieser Name muss mit dem Namen in Repetier-Server überinstimmen)
 
-## Contributors
-
-- coyote
 
 ## Changelog
 
 ### 0.0.1
-* (coyote) initial release
+* (coyote1) initial release
 
 ## License
 
 The MIT License (MIT)
 
-Copyright (c) 2018 Coyote <coyote_f@web.de>
+Copyright (c) 2018 coyote1 <coyote_f@web.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
