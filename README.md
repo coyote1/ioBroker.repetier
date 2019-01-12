@@ -21,7 +21,7 @@ Folgende Daten werden abgefragt:
 
 ## Konfiguration:
 
-IP Adresse vom Repetier Server eingeben, den Port (default 3344) und den API-Key (findet man im Repetier-Server WebUI. Einstellungen -> Globale Einstellungen -> Konnektivität) Danach noch die vorhandenen Druckernamen eintragen (Dieser Name muss mit dem Namen in Repetier-Server überinstimmen)
+IP Adresse vom Repetier Server eingeben, den Port (default 3344) und den API-Key (findet man im Repetier-Server WebUI. Einstellungen -> Globale Einstellungen -> Konnektivität). Danach noch die vorhandenen Druckernamen eintragen (Dieser Name muss mit dem Namen in Repetier-Server überinstimmen und Druckernamen müssen in alphabetischer Reihenfolge eingetragen werden).
 
 
 ## Changelog
