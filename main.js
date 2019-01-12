@@ -104,7 +104,7 @@ function main() {
              adapter.setState(path + printerone + '.GesamtDruckzeit', '----');
              adapter.setState(path + printerone + '.DruckzeitAbgeschlossen', '----'); 
              adapter.setState(path + printerone + '.Restzeit', '----');
-             adapter.setState(path + printerone + '.Prozent', '----');
+             adapter.setState(path + printerone + '.Status', '----');
                            }    
                         }      
                     }
@@ -148,7 +148,7 @@ function main() {
                             });
                         adapter.setState(path + printertwo + '.DruckzeitAbgeschlossen', {val: Math.round (1 * content[1].printedTimeComp.toFixed(2) / 60), ack: true});
                         
-                          adapter.setObjectNotExists(path + printerone + '.Restzeit', {
+                          adapter.setObjectNotExists(path + printertwo + '.Restzeit', {
                                 type: 'state',
                                 common: {
                                     name: 'Restzeit',
@@ -175,7 +175,7 @@ function main() {
              adapter.setState(path + printertwo + '.GesamtDruckzeit', '----');
              adapter.setState(path + printertwo + '.DruckzeitAbgeschlossen', '----'); 
              adapter.setState(path + printertwo + '.Restzeit', '----');
-             adapter.setState(path + printertwo + '.Prozent', '----');
+             adapter.setState(path + printertwo + '.Status', '----');
             
                            }   
             }      
@@ -221,7 +221,7 @@ function main() {
                             });
                         adapter.setState(path + printerthree + '.DruckzeitAbgeschlossen', {val: Math.round (1 * content[2].printedTimeComp.toFixed(2) / 60), ack: true});
                     
-                          adapter.setObjectNotExists(path + printerone + '.Restzeit', {
+                          adapter.setObjectNotExists(path + printerthree + '.Restzeit', {
                                 type: 'state',
                                 common: {
                                     name: 'Restzeit',
@@ -247,7 +247,7 @@ function main() {
              adapter.setState(path + printerthree + '.GesamtDruckzeit', '----');
              adapter.setState(path + printerthree + '.DruckzeitAbgeschlossen', '----'); 
              adapter.setState(path + printerthree + '.Restzeit', '----');
-             adapter.setState(path + printerthree + '.Prozent', '----');
+             adapter.setState(path + printerthree + '.Status', '----');
             
                               }                             
                         }      
