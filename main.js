@@ -67,7 +67,7 @@ function main() {
                                 },
                                 native: {}
                             });
-                        adapter.setState(path + printerone + '.GesamtDruckzeit', {val: Math.round (1 * content[0].printTime / 60) + ' min', ack: true});
+                        adapter.setState(path + printerone + '.GesamtDruckzeit', {val: Math.round (1 * content[0].printTime / 60) , ack: true});
                         
                             adapter.setObjectNotExists(path + printerone + '.DruckzeitAbgeschlossen', {
                                 type: 'state',
@@ -76,16 +76,25 @@ function main() {
                                 },
                                 native: {}
                             });
-                        adapter.setState(path + printerone + '.DruckzeitAbgeschlossen', {val: Math.round (1 * content[0].printedTimeComp.toFixed(2) / 60) + ' min', ack: true});
+                        adapter.setState(path + printerone + '.DruckzeitAbgeschlossen', {val: Math.round (1 * content[0].printedTimeComp.toFixed(2) / 60), ack: true});
                         
-                            adapter.setObjectNotExists(path + printerone + '.Prozent', {
+                          adapter.setObjectNotExists(path + printerone + '.Restzeit', {
                                 type: 'state',
                                 common: {
-                                    name: 'Prozent',
+                                    name: 'Restzeit',
                                 },
                                 native: {}
                             });
-                        adapter.setState(path + printerone + '.Prozent', {val: content[0].done.toFixed(2) + ' %', ack: true});
+                        adapter.setState(path + printerone + '.Restzeit', {val: Math.round ((1 * content[0].printTime.toFixed(2) / 60)-(1 * content[0].printedTimeComp / 60)), ack: true});   
+                           
+                            adapter.setObjectNotExists(path + printerone + '.Status', {
+                                type: 'state',
+                                common: {
+                                    name: 'Status',
+                                },
+                                native: {}
+                            });
+                        adapter.setState(path + printerone + '.Status', {val: content[0].done.toFixed(2) + ' %', ack: true});
                           }
                           
 //Wenn Druckteil fertig, dann Zeiten löschen 
@@ -94,8 +103,8 @@ function main() {
             
              adapter.setState(path + printerone + '.GesamtDruckzeit', '----');
              adapter.setState(path + printerone + '.DruckzeitAbgeschlossen', '----'); 
+             adapter.setState(path + printerone + '.Restzeit', '----');
              adapter.setState(path + printerone + '.Prozent', '----');
-            
                            }    
                         }      
                     }
@@ -128,7 +137,7 @@ function main() {
                                 },
                                 native: {}
                             });
-                        adapter.setState(path + printertwo + '.GesamtDruckzeit', {val: Math.round (1 * content[1].printTime / 60) + ' min', ack: true});
+                        adapter.setState(path + printertwo + '.GesamtDruckzeit', {val: Math.round (1 * content[1].printTime / 60), ack: true});
                         
                             adapter.setObjectNotExists(path + printertwo + '.DruckzeitAbgeschlossen', {
                                 type: 'state',
@@ -137,16 +146,25 @@ function main() {
                                 },
                                 native: {}
                             });
-                        adapter.setState(path + printertwo + '.DruckzeitAbgeschlossen', {val: Math.round (1 * content[1].printedTimeComp.toFixed(2) / 60) + ' min', ack: true});
+                        adapter.setState(path + printertwo + '.DruckzeitAbgeschlossen', {val: Math.round (1 * content[1].printedTimeComp.toFixed(2) / 60), ack: true});
                         
-                            adapter.setObjectNotExists(path + printertwo + '.Prozent', {
+                          adapter.setObjectNotExists(path + printerone + '.Restzeit', {
                                 type: 'state',
                                 common: {
-                                    name: 'Prozent',
+                                    name: 'Restzeit',
                                 },
                                 native: {}
                             });
-                        adapter.setState(path + printertwo + '.Prozent', {val: content[1].done.toFixed(2) + ' %', ack: true});
+                        adapter.setState(path + printertwo + '.Restzeit', {val: Math.round ((1 * content[1].printTime.toFixed(2) / 60)-(1 * content[1].printedTimeComp / 60)), ack: true});                         
+                    
+                            adapter.setObjectNotExists(path + printertwo + '.Status', {
+                                type: 'state',
+                                common: {
+                                    name: 'Status',
+                                },
+                                native: {}
+                            });
+                        adapter.setState(path + printertwo + '.Status', {val: content[1].done.toFixed(2) + ' %', ack: true});
                           }
 
 //Wenn Druckteil fertig, dann Zeiten löschen 
@@ -156,6 +174,7 @@ function main() {
             
              adapter.setState(path + printertwo + '.GesamtDruckzeit', '----');
              adapter.setState(path + printertwo + '.DruckzeitAbgeschlossen', '----'); 
+             adapter.setState(path + printertwo + '.Restzeit', '----');
              adapter.setState(path + printertwo + '.Prozent', '----');
             
                            }   
@@ -191,7 +210,7 @@ function main() {
                                 },
                                 native: {}
                             });
-                        adapter.setState(path + printerthree + '.GesamtDruckzeit', {val: Math.round (1 * content[2].printTime / 60) + ' min', ack: true});
+                        adapter.setState(path + printerthree + '.GesamtDruckzeit', {val: Math.round (1 * content[2].printTime / 60), ack: true});
                         
                             adapter.setObjectNotExists(path + printerthree + '.DruckzeitAbgeschlossen', {
                                 type: 'state',
@@ -200,16 +219,25 @@ function main() {
                                 },
                                 native: {}
                             });
-                        adapter.setState(path + printerthree + '.DruckzeitAbgeschlossen', {val: Math.round (1 * content[2].printedTimeComp.toFixed(2) / 60) + ' min', ack: true});
-                        
-                            adapter.setObjectNotExists(path + printerthree + '.Prozent', {
+                        adapter.setState(path + printerthree + '.DruckzeitAbgeschlossen', {val: Math.round (1 * content[2].printedTimeComp.toFixed(2) / 60), ack: true});
+                    
+                          adapter.setObjectNotExists(path + printerone + '.Restzeit', {
                                 type: 'state',
                                 common: {
-                                    name: 'Prozent',
+                                    name: 'Restzeit',
                                 },
                                 native: {}
                             });
-                        adapter.setState(path + printerthree + '.Prozent', {val: content[2].done.toFixed(2) + ' %', ack: true});
+                        adapter.setState(path + printerthree + '.Restzeit', {val: Math.round ((1 * content[2].printTime.toFixed(2) / 60)-(1 * content[2].printedTimeComp / 60)), ack: true});                         
+                    
+                            adapter.setObjectNotExists(path + printerthree + '.Status', {
+                                type: 'state',
+                                common: {
+                                    name: 'Status',
+                                },
+                                native: {}
+                            });
+                        adapter.setState(path + printerthree + '.Status', {val: content[2].done.toFixed(2) + ' %', ack: true});
                           }
                           
 //Wenn Druckteil fertig, dann Zeiten löschen 
@@ -218,6 +246,7 @@ function main() {
             
              adapter.setState(path + printerthree + '.GesamtDruckzeit', '----');
              adapter.setState(path + printerthree + '.DruckzeitAbgeschlossen', '----'); 
+             adapter.setState(path + printerthree + '.Restzeit', '----');
              adapter.setState(path + printerthree + '.Prozent', '----');
             
                               }                             
