@@ -12,6 +12,7 @@ Folgende Daten werden abgefragt:
 - Layerhöhe
 - Gesamte Druckzeit
 - gedruckte Zeit
+- Restzeit
 - Druckstatus in %
 - Firmware
 - Flow in %
