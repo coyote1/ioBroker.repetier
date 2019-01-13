@@ -457,7 +457,7 @@ function main() {
                                 },
                                 native: {}
                             });
-                            adapter.setState(path + printertwo + '.Multiply', {val: content[printertwo].flowMultiply, ack: true});
+                            adapter.setState(path + printertwo + '.FlowMultiply', {val: content[printertwo].flowMultiply, ack: true});
                                                                                                                        
                         
                         adapter.setObjectNotExists(path + printertwo + '.Extruder.aktuelleTemperatur', {
