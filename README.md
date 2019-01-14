@@ -2,7 +2,7 @@
 # ioBroker.repetier
 =================
 
-Adapter for data retrieval from Repetier-Server for 3d printers.
+ioBroker adapterto retrieve data from Repetier-Server for 3d printers.
 
 The following data is requested:
 
