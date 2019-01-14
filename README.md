@@ -23,9 +23,6 @@ The following data is requested:
 
 Enter the IP address of Repetier server, enter port (default 3344) and API key (can be found in the Repetier-Server WebUI Settings -> Global Settings -> Connectivity). Then enter the existing printer names (this name must agree with the name in Repetier-Server and printer names must be entered in alphabetical order).
 
-## ToDo
-
-- Configuration Translation
 
 ## Changelog
 
