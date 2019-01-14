@@ -2,7 +2,7 @@
 # ioBroker.repetier
 =================
 
-ioBroker adapterto retrieve data from Repetier-Server for 3d printers.
+ioBroker adapter to retrieve data from Repetier-Server for 3d printers.
 
 The following data is requested:
 
@@ -10,10 +10,10 @@ The following data is requested:
 - Temperature Bed
 - Name Print Part
 - Layerheight
-- printed Time complete
-- printed Time
-- rest time
-- print status in %
+- Printed Time complete
+- Printed Time
+- Rest time
+- Print status in %
 - Firmware
 - Flow in %
 - Speed in %
@@ -23,6 +23,9 @@ The following data is requested:
 
 Enter the IP address of Repetier server, enter port (default 3344) and API key (can be found in the Repetier-Server WebUI Settings -> Global Settings -> Connectivity). Then enter the existing printer names (this name must agree with the name in Repetier-Server and printer names must be entered in alphabetical order).
 
+## ToDo
+
+- Configuration Translation
 
 ## Changelog
 
