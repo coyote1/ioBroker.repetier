@@ -1,4 +1,4 @@
-# Das ist die Dokumentation
+# Dokumentation
 
 Adapter für die Datenabfrage von Repetier-Server für 3d Drucker.
 
