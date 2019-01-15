@@ -20,10 +20,6 @@
         "authors": [
             "Coyote <coyote_f@web.de>"
         ],
-        "docs": {
-            "en": "docs/en/admin.md",
-            "de": "docs/de/admin.md"
-        },
         "platform": "Javascript/Node.js",
         "mode": "schedule",
         "schedule": "*/8 * * * * *",
@@ -37,7 +33,7 @@
         "license": "MIT",
         "readme": "https://github.com/coyote1/ioBroker.repetier/blob/master/README.md",
         "loglevel": "info",
-        "type": ""
+        "type": "hardware"
     },
     "native": {},
     "objects": []

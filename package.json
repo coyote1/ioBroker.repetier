@@ -19,14 +19,6 @@
         "#USER",
         "/"
     ],
-    "_resolved": "",
-    "_shasum": "9b473bcd9f88d917b2efc65e36768b12f6b7e2ac",
-    "_spec": "iobroker.repetiern@0.0.1",
-    "_where": "/opt",
-    "author": {
-        "name": "Coyote",
-        "email": "coyote_f@web.de"
-    },
     "bugs": {
         "url": "https://github.com/coyote1/ioBroker.repetier/issues"
     },
