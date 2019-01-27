@@ -1,11 +1,11 @@
 {
-    "_from": "iobroker.repetier@0.0.1",
-    "_id": "iobroker.repetier@0.0.1",
-    "_inBundle": false,
-    "_integrity": "sha1-m0c7zZ+I2Rey78ZeNnaLEva34qw=",
-    "_location": "/iobroker.repetier",
-    "_phantomChildren": {},
-    "_requested": {
+    "from": "iobroker.repetier@0.0.1",
+    "id": "iobroker.repetier@0.0.1",
+    "inBundle": false,
+    "integrity": "sha1-m0c7zZ+I2Rey78ZeNnaLEva34qw=",
+    "location": "/iobroker.repetier",
+    "phantomChildren": {},
+    "requested": {
         "type": "version",
         "registry": true,
         "raw": "iobroker.repetier@0.0.1",
@@ -15,7 +15,7 @@
         "saveSpec": null,
         "fetchSpec": "0.0.1"
     },
-    "_requiredBy": [
+    "requiredBy": [
         "#USER",
         "/"
     ],
