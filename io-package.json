@@ -17,6 +17,9 @@
             "en": "Repetier",
             "de": "Repetier"
         },
+      "name": "bluefox",
+      "email": "dogafox@gmail.com"
+    },
         "authors": [
             "Coyote <coyote_f@web.de>"
         ],
