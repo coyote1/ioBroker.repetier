@@ -22,6 +22,10 @@
     "bugs": {
         "url": "https://github.com/coyote1/ioBroker.repetier/issues"
     },
+      "author": {
+    "name": "Frank Reiplinger",
+    "email": "coyote_f@web.de"
+  },
     "bundleDependencies": false,
     "contributors": [
         {
