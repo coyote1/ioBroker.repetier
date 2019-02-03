@@ -22,9 +22,6 @@
     "bugs": {
         "url": "https://github.com/coyote1/ioBroker.repetier/issues"
     },
-      "name": "bluefox",
-      "email": "dogafox@gmail.com"
-    },
       "author": {
     "name": "Frank Reiplinger",
     "email": "coyote_f@web.de"
