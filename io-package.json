@@ -21,8 +21,7 @@
             "Coyote <coyote_f@web.de>"
         ],
         "platform": "Javascript/Node.js",
-        "mode": "schedule",
-        "schedule": "*/8 * * * * *",
+        "mode": "daemon",
         "icon": "repetier.png",
         "materialize": true,
         "enabled": true,
