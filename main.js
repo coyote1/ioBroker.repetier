@@ -7,26 +7,50 @@ var request = require('request');
 
 var adapter = new utils.Adapter('repetier');
 
+var repetierIP ;
+var repetierPort ;
+var repetierApi ;
+var printerrepone ;
+var printerone ; 
+var printerreptwo ;
+var printertwo ; 
+var printerrepthree ;
+var printerthree ; 
+var path  ;
+
 adapter.on('ready', function () {
     main();
 });
 
 function main() {
+    
+    adapter.subscribeStates('*');
+	adapter.log.debug('subscribed');
 
-    var repetierIP = adapter.config.repetierIP;
-    var repetierPort = adapter.config.repetierPort;
-    var repetierApi = adapter.config.repetierApi;
-    var printerrepone = adapter.config.printerone;
-    var printerone = printerrepone.replace(/ /g, '_'); //Leerzeichen ersetzen
-    var printerreptwo = adapter.config.printertwo;
-    var printertwo = printerreptwo.replace(/ /g, '_'); //Leerzeichen ersetzen
-    var printerrepthree = adapter.config.printerthree;
-    var printerthree = printerrepthree.replace(/ /g, '_'); //Leerzeichen ersetzen
-    let path = repetierIP.replace(/\./g, '_') + '.' ;
+	repetierIP = adapter.config.repetierIP;
+	repetierPort = adapter.config.repetierPort;
+	repetierApi = adapter.config.repetierApi;
+	printerrepone = adapter.config.printerone;
+	printerone = printerrepone.replace(/ /g, '_'); //Leerzeichen ersetzen
+	printerreptwo = adapter.config.printertwo;
+	printertwo = printerreptwo.replace(/ /g, '_'); //Leerzeichen ersetzen
+	printerrepthree = adapter.config.printerthree;
+	printerthree = printerrepthree.replace(/ /g, '_'); //Leerzeichen ersetzen
+	path = repetierIP.replace(/\./g, '_') + '.' ;
 
     adapter.log.debug('repetier IP: ' + repetierIP);
     
+        // Refresh State every Minute
+    refreshState();
+    setInterval(refreshState, 60000);
+}
+
+
+function refreshState()
+{    
 //Erster request für "listPrinter"
+
+adapter.log.debug('repetier refreshing states... ');
 
 
  request(
@@ -553,7 +577,4 @@ function main() {
             }
          );
 
-        setTimeout(function () {
-        adapter.stop();
-    }, 4000);
 }
