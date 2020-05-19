@@ -300,7 +300,7 @@ adapter.log.debug('repetier refreshing states... ');
 
                     if (content && content.hasOwnProperty(3)) {
                         for (var key4 in content[3]) {
-                            var obj4 = content[3[key4];
+                            var obj4 = content[3][key4];
  //                                 adapter.log.debug('key: ' + key4);
  //                        adapter.log.debug('obj: ' + obj4);
       
