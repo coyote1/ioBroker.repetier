@@ -25,9 +25,10 @@ adapter.on('ready', function () {
 });
 
 function main() {
-    
+
     adapter.subscribeStates('*');
 	adapter.log.debug('subscribed');
+	
 
 	repetierIP = adapter.config.repetierIP;
 	repetierPort = adapter.config.repetierPort;
@@ -38,8 +39,8 @@ function main() {
 	printertwo = printerreptwo.replace(/ /g, '_'); //Leerzeichen ersetzen
 	printerrepthree = adapter.config.printerthree;
 	printerthree = printerrepthree.replace(/ /g, '_'); //Leerzeichen ersetzen
-	printerrepthree = adapter.config.printerfour;
-	printerthree = printerrepfour.replace(/ /g, '_'); //Leerzeichen ersetzen
+	printerrepfour = adapter.config.printerfour;
+	printerfour = printerrepfour.replace(/ /g, '_'); //Leerzeichen ersetzen
 	path = repetierIP.replace(/\./g, '_') + '.' ;
 
     adapter.log.debug('repetier IP: ' + repetierIP);
@@ -54,9 +55,24 @@ function refreshState()
 {    
 //Erster request für "listPrinter"
 
+	path = repetierIP.replace(/\./g, '_') + '.' ;
+
+    adapter.log.debug('repetier IP: ' + repetierIP);
+
 adapter.log.debug('repetier refreshing states... ');
 
 
+    // Refresh State every Minute
+    refreshState();
+    setInterval(refreshState, 60000);
+}
+
+
+function refreshState()
+{    
+//Erster request für "listPrinter"
+
+adapter.log.debug('repetier refreshing states... ');
  request(
             {
                 url:  'http://' + repetierIP + ':' + repetierPort + '/printer/api/' + printerone + '?a=listPrinter&data&apikey=' + repetierApi,
@@ -739,5 +755,4 @@ adapter.log.debug('repetier refreshing states... ');
                 }
             }
          );
-
 }
