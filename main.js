@@ -335,7 +335,7 @@ adapter.log.debug('repetier refreshing states... ');
                             });
                         adapter.setState(path + printerfour + '.DruckzeitAbgeschlossen', {val: Math.round (1 * content[3].printedTimeComp.toFixed(2) / 60), ack: true});
                         
-                          adapter.setObjectNotExists(path + printefour + '.Restzeit', {
+                          adapter.setObjectNotExists(path + printerfour + '.Restzeit', {
                                 type: 'state',
                                 common: {
                                     name: 'Restzeit',
@@ -697,7 +697,7 @@ adapter.log.debug('repetier refreshing states... ');
                             });
                             adapter.setState(path + printerfour + '.Firmware', {val: content[printerfour].firmware, ack: true});
 
-                       adapter.setObjectNotExists(path + printerthree + '.Layer', {
+                       adapter.setObjectNotExists(path + printerfour + '.Layer', {
                                 type: 'state',
                                 common: {
                                     name: 'Layer',
