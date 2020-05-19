@@ -1,6 +1,6 @@
 {
-    "from": "iobroker.repetier@0.0.1",
-    "id": "iobroker.repetier@0.0.1",
+    "from": "iobroker.repetier@0.0.2",
+    "id": "iobroker.repetier@0.0.2",
     "inBundle": false,
     "integrity": "sha1-m0c7zZ+I2Rey78ZeNnaLEva34qw=",
     "location": "/iobroker.repetier",
@@ -8,12 +8,12 @@
     "requested": {
         "type": "version",
         "registry": true,
-        "raw": "iobroker.repetier@0.0.1",
+        "raw": "iobroker.repetier@0.0.2",
         "name": "iobroker.repetier",
         "escapedName": "iobroker.repetier",
-        "rawSpec": "0.0.1",
+        "rawSpec": "0.0.2",
         "saveSpec": null,
-        "fetchSpec": "0.0.1"
+        "fetchSpec": "0.0.2"
     },
     "requiredBy": [
         "#USER",
@@ -60,5 +60,5 @@
     "scripts": {
         "test": "node node_modules/mocha/bin/mocha --exit"
     },
-    "version": "0.0.1"
+    "version": "0.0.2"
 }
