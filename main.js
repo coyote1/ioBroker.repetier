@@ -16,6 +16,8 @@ var printerreptwo ;
 var printertwo ; 
 var printerrepthree ;
 var printerthree ; 
+var printerrepfour ;
+var printerfour ; 
 var path  ;
 
 adapter.on('ready', function () {
@@ -36,6 +38,8 @@ function main() {
 	printertwo = printerreptwo.replace(/ /g, '_'); //Leerzeichen ersetzen
 	printerrepthree = adapter.config.printerthree;
 	printerthree = printerrepthree.replace(/ /g, '_'); //Leerzeichen ersetzen
+	printerrepthree = adapter.config.printerfour;
+	printerthree = printerrepfour.replace(/ /g, '_'); //Leerzeichen ersetzen
 	path = repetierIP.replace(/\./g, '_') + '.' ;
 
     adapter.log.debug('repetier IP: ' + repetierIP);
@@ -275,7 +279,77 @@ adapter.log.debug('repetier refreshing states... ');
             
                               }                             
                         }      
-                    }                    
+                    } 
+// Abfrage "listPrinter" vierter Drucker
+
+                    if (content && content.hasOwnProperty(3)) {
+                        for (var key4 in content[3]) {
+                            var obj4 = content[3[key4];
+ //                                 adapter.log.debug('key: ' + key4);
+ //                        adapter.log.debug('obj: ' + obj4);
+      
+                             adapter.setObjectNotExists(path + printerfour + '.Druckteil', {
+                                type: 'state',
+                                common: {
+                                    name: 'Druckteil',
+                                },
+                                native: {}
+                            });
+                        adapter.setState(path + printerfour + '.Druckteil', {val: content[3].job, ack: true});
+
+  //Wenn nicht gedruckt wird, keine Anfrage der Zeiten, da im JSON nicht vorhanden
+  
+            if(content[3].job !== 'none'){   
+                        
+                            adapter.setObjectNotExists(path + printerfour + '.GesamtDruckzeit', {
+                                type: 'state',
+                                common: {
+                                    name: 'GesamtDruckzeit',
+                                },
+                                native: {}
+                            });
+                        adapter.setState(path + printerfour + '.GesamtDruckzeit', {val: Math.round (1 * content[3].printTime / 60) , ack: true});
+                        
+                            adapter.setObjectNotExists(path + printerfour + '.DruckzeitAbgeschlossen', {
+                                type: 'state',
+                                common: {
+                                    name: 'DruckzeitAbgeschlossen',
+                                },
+                                native: {}
+                            });
+                        adapter.setState(path + printerfour + '.DruckzeitAbgeschlossen', {val: Math.round (1 * content[3].printedTimeComp.toFixed(2) / 60), ack: true});
+                        
+                          adapter.setObjectNotExists(path + printefour + '.Restzeit', {
+                                type: 'state',
+                                common: {
+                                    name: 'Restzeit',
+                                },
+                                native: {}
+                            });
+                        adapter.setState(path + printerfour + '.Restzeit', {val: Math.round ((1 * content[3].printTime.toFixed(2) / 60)-(1 * content[3].printedTimeComp / 60)), ack: true});   
+                           
+                            adapter.setObjectNotExists(path + printerfour + '.Status', {
+                                type: 'state',
+                                common: {
+                                    name: 'Status',
+                                },
+                                native: {}
+                            });
+                        adapter.setState(path + printerfour + '.Status', {val: content[3].done.toFixed(2) + ' %', ack: true});
+                          }
+                          
+//Wenn Druckteil fertig, dann Zeiten löschen 
+
+            if(content[3].job === 'none'){       
+            
+             adapter.setState(path + printerfour + '.GesamtDruckzeit', '----');
+             adapter.setState(path + printerfour + '.DruckzeitAbgeschlossen', '----'); 
+             adapter.setState(path + printerfour + '.Restzeit', '----');
+             adapter.setState(path + printerfour + '.Status', '----');
+                           }    
+                        }      
+                    }
+                    			
                 }
             }
       );    
@@ -375,6 +449,33 @@ adapter.log.debug('repetier refreshing states... ');
                                 type: 'channel',
                                 common: {
                                     name: printerthree + '.Bett',
+                                },
+                                native: {}
+                            });
+				
+//Path write Printer Four
+
+                            adapter.setObjectNotExists(path + printerfour, {
+                                type: 'channel',
+                                common: {
+                                    name: printerfour,
+                                },
+                                native: {}
+                            });
+                            
+                            adapter.setObjectNotExists(path + printerfour + '.Extruder', {
+                                type: 'channel',
+                                common: {
+                                    name: printerfour + '.Extruder',
+                                },
+                                native: {}
+                            });
+                            
+                            
+                            adapter.setObjectNotExists(path + printerfour + '.Bett', {
+                                type: 'channel',
+                                common: {
+                                    name: printerfour + '.Bett',
                                 },
                                 native: {}
                             });
@@ -566,6 +667,68 @@ adapter.log.debug('repetier refreshing states... ');
                             adapter.setState(path + printerthree + '.Bett.aktuelleTemperatur', {val: content[printerthree].heatedBeds[0].tempRead, ack: true});                                
 
                             }
+//Data write Printer Four
+
+
+                if (content && content.hasOwnProperty(printerfour)) {
+
+                       adapter.setObjectNotExists(path + printerfour + '.Firmware', {
+                                type: 'state',
+                                common: {
+                                    name: 'Firmware',
+                                },
+                                native: {}
+                            });
+                            adapter.setState(path + printerfour + '.Firmware', {val: content[printerfour].firmware, ack: true});
+
+                       adapter.setObjectNotExists(path + printerthree + '.Layer', {
+                                type: 'state',
+                                common: {
+                                    name: 'Layer',
+                                },
+                                native: {}
+                            });
+                            adapter.setState(path + printerfour + '.Layer', {val: content[printerfour].layer, ack: true});
+                        
+                       adapter.setObjectNotExists(path + printerfour + '.SpeedMultiply', {
+                                type: 'state',
+                                common: {
+                                    name: 'SpeedMultiply',
+                                },
+                                native: {}
+                            });
+                            adapter.setState(path + printerfour + '.SpeedMultiply', {val: content[printerfour].speedMultiply, ack: true});
+                        
+                        adapter.setObjectNotExists(path + printerfour + '.FlowMultiply', {
+                                type: 'state',
+                                common: {
+                                    name: 'FlowMultiply',
+                                },
+                                native: {}
+                            });
+                            adapter.setState(path + printerfour + '.FlowMultiply', {val: content[printerfour].flowMultiply, ack: true});
+                                                                                                                        
+                        
+                        adapter.setObjectNotExists(path + printerfour + '.Extruder.aktuelleTemperatur', {
+                                type: 'state',
+                                common: {
+                                    name: 'aktuelleTemperatur',
+                                },
+                                native: {}
+                            });
+                            adapter.setState(path + printerfour + '.Extruder.aktuelleTemperatur', {val: content[printerfour].extruder[0].tempRead, ack: true});
+     
+     
+                        adapter.setObjectNotExists(path + printerfour + '.Bett.aktuelleTemperatur', {
+                                type: 'state',
+                                common: {
+                                    name: 'aktuelleTemperatur',
+                                },
+                                native: {}
+                            });
+                            adapter.setState(path + printerfour + '.Bett.aktuelleTemperatur', {val: content[printerfour].heatedBeds[0].tempRead, ack: true});                                
+
+                            }				
                         }
                     } else {
                         adapter.log.warn('Response has no valid content. Check IP address and try again.');
