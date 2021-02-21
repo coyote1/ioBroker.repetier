@@ -41,7 +41,7 @@ function main() {
 	printerthree = printerrepthree.replace(/ /g, '_'); //Leerzeichen ersetzen
 	printerrepfour = adapter.config.printerfour;
 	printerfour = printerrepfour.replace(/ /g, '_'); //Leerzeichen ersetzen
-	path = repetierIP.replace(/\./g, '_') + '.' ;
+	path = repetierIP.replace(/\./g, '_') ;
 
     adapter.log.debug('repetier IP: ' + repetierIP);
     
@@ -55,7 +55,7 @@ function refreshState()
 {    
 //Erster request für "listPrinter"
 
-	path = repetierIP.replace(/\./g, '_') + '.' ;
+	path = repetierIP.replace(/\./g, '_') ;
 
     adapter.log.debug('repetier IP: ' + repetierIP);
 
