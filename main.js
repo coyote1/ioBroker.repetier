@@ -55,7 +55,7 @@ function refreshState()
 {    
 //Erster request für "listPrinter"
 
-	path = repetierIP.replace(/\./g, '_') ;
+	path = repetierIP.replace(/\./g, '_') + "." ;
 
     adapter.log.debug('repetier IP: ' + repetierIP);
 
