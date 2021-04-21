@@ -18,7 +18,7 @@ var printerrepthree ;
 var printerthree ; 
 var printerrepfour ;
 var printerfour ; 
-var path  ;
+var path ;
 
 adapter.on('ready', function () {
     main();
@@ -122,7 +122,7 @@ adapter.log.debug('repetier refreshing states... ');
                             });
                         adapter.setState(path  + "." + printerone + '.DruckzeitAbgeschlossen', {val: Math.round (1 * content[0].printedTimeComp.toFixed(2) / 60), ack: true});
                         
-                          adapter.setObjectNotExists(path + printerone + '.Restzeit', {
+                          adapter.setObjectNotExists(path + "."  + printerone + '.Restzeit', {
                                 type: 'state',
                                 common: {
                                     name: 'Restzeit',
@@ -217,7 +217,7 @@ adapter.log.debug('repetier refreshing states... ');
              if(content[1].job === 'none'){      
             
              adapter.setState(path + "."  + printertwo + '.GesamtDruckzeit', '----');
-             adapter.setState(path + "."  + "."  + printertwo + '.DruckzeitAbgeschlossen', '----'); 
+             adapter.setState(path + "."  + printertwo + '.DruckzeitAbgeschlossen', '----'); 
              adapter.setState(path + "."  + printertwo + '.Restzeit', '----');
              adapter.setState(path + "."  + printertwo + '.Status', '----');
             
